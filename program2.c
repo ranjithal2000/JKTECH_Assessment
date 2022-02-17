@@ -23,9 +23,9 @@ void write()
      scanf("%s",stu[i].name);
      printf("enter student age\n");
      scanf("%d",&stu[i].age);
+     fprintf(fp1,"%s\n%d\n",&stu[i].name,&stu[i].age);
     }
     }
-    fwrite(&stu,sizeof(struct student),1,fp1);
     printf("content successfully written\n");
 fclose(fp1);
 }
@@ -43,9 +43,9 @@ void read()
     printf("student details are are:\n");
     for(int i=0;i<2;i++)
     {
-        fread(&stu,sizeof(struct student),1,fp2);
         printf("student name:%s \n", stu[i].name);
         printf("student age: name:%d \n",stu[i].age);
+        fscanf(fp2,"%s %d", &stu[i].name,&stu[i].age);
     }
     }
     fclose(fp2);
