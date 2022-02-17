@@ -43,8 +43,8 @@ void read()
     printf("student details are are:\n");
     for(int i=0;i<2;i++)
     {
-        printf("student name:%s \n", stu[i].name);
-        printf("student age: name:%d \n",stu[i].age);
+        printf("Student Name:%s\n", stu[i].name);
+        printf("Student Age:%d\n",stu[i].age);
         fscanf(fp2,"%s %d", &stu[i].name,&stu[i].age);
     }
     }
@@ -55,4 +55,3 @@ int main()
     write();
     read();
 }
-
