@@ -14,6 +14,8 @@ void write()
     {
         printf("file does not exist");
     }
+    else
+    {
     for(int i=0;i<2;i++)
     {
     fflush(stdin);
@@ -22,6 +24,8 @@ void write()
      printf("enter student age\n");
      scanf("%d",&stu[i].age);
     }
+    }
+    fwrite(&stu,sizeof(struct student),1,fp1);
     printf("content successfully written\n");
 fclose(fp1);
 }
@@ -34,12 +38,15 @@ void read()
     {
         printf("file does not exist");
     }
+    else
+    {
     printf("student details are are:\n");
     for(int i=0;i<2;i++)
     {
-        fscanf(fp2,"%s\n%d\n",stu[i].name,stu[i].age);
+        fread(&stu,sizeof(struct student),1,fp2);
         printf("student name:%s \n", stu[i].name);
         printf("student age: name:%d \n",stu[i].age);
+    }
     }
     fclose(fp2);
 }
@@ -48,3 +55,4 @@ int main()
     write();
     read();
 }
+
